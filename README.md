@@ -23,7 +23,7 @@ Age Buggy Peyda Kardi Hatman Toye [Servere Discord](https://discord.gg/4F7QZFFpQ
 Baraye Download Be [Servere Discord](https://discord.gg/4F7QZFFpQY) Moraje'e Konid
 
 ## Downloade API
-[JitPack](https://jitpack.io/#CobbleSword/NachoSpigot/master-SNAPSHOT)
+[JitPack](https://jitpack.io/#PersianDevs/FeatherMC/)
 
 ### Building / Compiling
 > Baraye Build, Repo Ro Clone Konid, Va `mvn clean install` Ro Dar Directory e FeatherMC Run Konid/
