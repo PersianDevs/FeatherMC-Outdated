@@ -26,4 +26,4 @@ Baraye Download Be [Servere Discord](https://discord.gg/4F7QZFFpQY) Moraje'e Kon
 [JitPack](https://jitpack.io/#PersianDevs/FeatherMC/)
 
 ### Building / Compiling
-> Baraye Build, Repo Ro Clone Konid, Va `mvn clean install` Ro Dar Directory e FeatherMC Run Konid/
+> Baraye Build, Repo Ro Clone Konid, Va `mvn clean install` Ro Dar Directory e FeatherMC Run Konid
