@@ -118,7 +118,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
 
         thread.setDaemon(true);
         thread.start();
-        DedicatedServer.LOGGER.info("Dar Hale Start Kardan Server (FeatherMC: BETA v0.0.1 & MC: v1.8.8)");
+        DedicatedServer.LOGGER.info("Dar Hale Start Kardan Server (FeatherMC: BETA v0.0.2 & MC: v1.8.8)");
 
         // FeatherMC - Removed useless check
         /*
