@@ -44,9 +44,9 @@ public class SimpleCommandMap implements CommandMap {
     }
 
     public void setFallbackCommands() {
-        // Nacho start
-        if(server.helpCommandEnabled()) register("bukkit", new HelpCommand());
-        // Nacho end
+        // FeatherMC - Removed useless command
+        // if(server.helpCommandEnabled()) register("bukkit", new HelpCommand());
+        // FeatherMC - End
     }
 
     /**
