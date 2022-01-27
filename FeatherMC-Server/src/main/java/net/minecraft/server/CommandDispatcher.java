@@ -4,20 +4,20 @@ public class CommandDispatcher extends CommandHandler implements ICommandDispatc
 
     // FeatherMC - removed useless commands
     public CommandDispatcher() {
-        this.a(new CommandTime());
-        this.a(new CommandGamemode());
-        this.a(new CommandDifficulty());
+//        this.a(new CommandTime());
+//        this.a(new CommandGamemode());
+//        this.a(new CommandDifficulty());
 //        this.a(new CommandGamemodeDefault());
         this.a(new CommandKill());
 //        this.a(new CommandToggleDownfall());
-        this.a(new CommandWeather());
+//        this.a(new CommandWeather());
 //        this.a(new CommandXp());
-        this.a(new CommandTp());
+//        this.a(new CommandTp());
         this.a(new CommandGive());
-        this.a(new CommandReplaceItem());
+//        this.a(new CommandReplaceItem());
 //        this.a(new CommandStats());
         this.a(new CommandEffect());
-        this.a(new CommandEnchant());
+//        this.a(new CommandEnchant());
 //        this.a(new CommandParticle());
 //        this.a(new CommandMe());
 //        this.a(new CommandSeed());
@@ -26,9 +26,9 @@ public class CommandDispatcher extends CommandHandler implements ICommandDispatc
 //        this.a(new CommandTell());
 //        this.a(new CommandSay());
 //        this.a(new CommandSpawnpoint());
-        this.a(new CommandSetWorldSpawn());
+//        this.a(new CommandSetWorldSpawn());
         this.a(new CommandGamerule());
-        this.a(new CommandClear());
+//        this.a(new CommandClear());
 //        this.a(new CommandTestFor());
 //        this.a(new CommandSpreadPlayers());
         this.a(new CommandPlaySound());
@@ -45,7 +45,7 @@ public class CommandDispatcher extends CommandHandler implements ICommandDispatc
 //        this.a(new CommandTestForBlock());
 //        this.a(new CommandTellRaw());
 //        this.a(new CommandWorldBorder());
-        this.a(new CommandTitle());
+//        this.a(new CommandTitle());
 //        this.a(new CommandEntityData());
         if (MinecraftServer.getServer().ae()) {
             this.a(new CommandOp());
@@ -59,7 +59,7 @@ public class CommandDispatcher extends CommandHandler implements ICommandDispatc
             this.a(new CommandBan());
             this.a(new CommandBanList());
             this.a(new CommandPardon());
-            this.a(new CommandKick());
+//            this.a(new CommandKick());
 //            this.a(new CommandList());
             this.a(new CommandWhitelist());
 //            this.a(new CommandIdleTimeout());
