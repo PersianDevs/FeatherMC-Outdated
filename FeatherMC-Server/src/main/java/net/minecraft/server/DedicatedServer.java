@@ -270,7 +270,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
                 long j = System.nanoTime();
 
                 if (this.U() == null) {
-                    this.setWorld(this.propertyManager.getString("level-name", "world"));
+                    this.setWorld(this.propertyManager.getString("level-name", "Spawn"));
                 }
 
                 String s = this.propertyManager.getString("level-seed", "");
