@@ -26,3 +26,6 @@ database:
     driver: org.sqlite.JDBC
     password: walrus
     url: jdbc:sqlite:{DIR}{NAME}.db
+worlds:
+    Spawn:
+        generator: FeatherUtilities

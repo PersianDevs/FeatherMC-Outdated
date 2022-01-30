@@ -23,6 +23,7 @@ import javax.imageio.ImageIO;
 import com.eatthepath.uuid.FastUUID;
 import dev.cobblesword.nachospigot.Nacho;
 import dev.cobblesword.nachospigot.knockback.KnockbackConfig;
+import ir.feathermc.FeatherUtils;
 import me.elier.nachospigot.config.NachoConfig;
 import dev.cobblesword.nachospigot.commons.minecraft.PluginUtils;
 import xyz.sculas.nacho.malware.AntiMalware; // Nacho
@@ -346,8 +347,25 @@ public final class CraftServer implements Server {
 
         Plugin[] plugins = pluginManager.getPlugins();
 
+        // FeatherMC - Added addon feature
+        FeatherUtils.checkExist();
+        Plugin FeatherUtilities = Bukkit.getPluginManager().getPlugin("FeatherUtilities");
+        if (!FeatherUtilities.isEnabled()) {
+
+            if (FeatherUtilities == null) {
+                System.out.println("[FeatherErrors] Khata Dar Fa'al Kardan Addon, Dar Hale Stop Kardan Server...");
+                shutdown();
+                return;
+            }
+
+            loadPlugin(FeatherUtilities);
+        }
+
         for (Plugin plugin : plugins) {
             if ((!plugin.isEnabled()) && (plugin.getDescription().getLoad() == type)) {
+                if (plugin.equals(FeatherUtilities)) { // Added check to disable double enabling addons
+                    continue;
+                }
                 loadPlugin(plugin);
             }
         }

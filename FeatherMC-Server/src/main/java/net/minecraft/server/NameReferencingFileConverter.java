@@ -495,7 +495,7 @@ public class NameReferencingFileConverter {
     }
 
     private static File d(PropertyManager propertymanager) {
-        String s = propertymanager.getString("level-name", "world");
+        String s = propertymanager.getString("level-name", "Spawn");
         File file = new File(MinecraftServer.getServer().server.getWorldContainer(), s); // CraftBukkit - Respect container setting
 
         return new File(file, "players");
