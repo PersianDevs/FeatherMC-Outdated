@@ -9,7 +9,10 @@ public class CraftSnowball extends CraftProjectile implements Snowball {
     public CraftSnowball(CraftServer server, EntitySnowball entity) {
         super(server, entity);
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public EntitySnowball getHandle() {
         return (EntitySnowball) entity;

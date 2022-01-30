@@ -252,15 +252,15 @@ public class PaperWorldConfig
     public boolean generateFlatBedrock;
     private void generatorSettings()
     {
-        generateCanyon = getBoolean( "generator-settings.canyon", true );
-        generateCaves = getBoolean( "generator-settings.caves", true );
-        generateDungeon = getBoolean( "generator-settings.dungeon", true );
-        generateFortress = getBoolean( "generator-settings.fortress", true );
-        generateMineshaft = getBoolean( "generator-settings.mineshaft", true );
-        generateMonument = getBoolean( "generator-settings.monument", true );
-        generateStronghold = getBoolean( "generator-settings.stronghold", true );
-        generateTemple = getBoolean( "generator-settings.temple", true );
-        generateVillage = getBoolean( "generator-settings.village", true );
+        generateCanyon = getBoolean( "generator-settings.canyon", false );
+        generateCaves = getBoolean( "generator-settings.caves", false );
+        generateDungeon = getBoolean( "generator-settings.dungeon", false );
+        generateFortress = getBoolean( "generator-settings.fortress", false );
+        generateMineshaft = getBoolean( "generator-settings.mineshaft", false );
+        generateMonument = getBoolean( "generator-settings.monument", false );
+        generateStronghold = getBoolean( "generator-settings.stronghold", false );
+        generateTemple = getBoolean( "generator-settings.temple", false );
+        generateVillage = getBoolean( "generator-settings.village", false );
         generateFlatBedrock = getBoolean( "generator-settings.flat-bedrock", false );
     }
 

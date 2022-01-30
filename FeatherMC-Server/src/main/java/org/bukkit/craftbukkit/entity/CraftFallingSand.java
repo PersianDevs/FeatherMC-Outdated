@@ -63,5 +63,10 @@ public class CraftFallingSand extends CraftEntity implements FallingSand {
     public org.bukkit.Location getSourceLoc() {
         return getHandle().sourceLoc;
     }
+
+    @Override
+    public void sendMessageColor(String message) {
+
+    }
     // PaperSpigot end
 }

@@ -12,7 +12,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 public class KnockbackCommand extends Command {
 
@@ -22,18 +22,18 @@ public class KnockbackCommand extends Command {
         super(name);
         this.description = "Avaz Kardane Tanzimate Knockback";
         this.usageMessage = "/kb [action] [arguments]";
-        this.setAliases(Arrays.asList("kb", "knockback"));
-        this.setPermission("ns.command.kb");
+        this.setAliases(Collections.singletonList("knockback"));
+        this.setPermission("feathermc.command.knockback");
     }
 
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (!testPermission(sender)) return true;
-        if(!(sender instanceof Player)) {
+        if (!(sender instanceof Player)) {
             sender.sendMessage("Shoma Bayad Player Bashid Ke In Kar Ro Anjam Bedid");
             return false;
         }
-        Player player = (Player)sender;
+        Player player = (Player) sender;
 
         switch (args.length) {
             case 2: {
@@ -401,13 +401,14 @@ public class KnockbackCommand extends Command {
         }
 
         player.spigot().sendMessage(
-                new ClickableBuilder("\n§8§l[§a§lCreate new profile§8]")
+                new ClickableBuilder("\n§8§l[§a§lSakhtane Profile Jadid§8]")
                         .setHover("§c[Inja Click Kon Ta Yek Profile e Jadid Besazi]")
                         .setClick("/kb create ", ClickEvent.Action.SUGGEST_COMMAND)
                         .build()
         );
         player.sendMessage(separator);
     }
+
     private void knockbackCommandView(Player player, KnockbackProfile profile) {
         player.sendMessage(separator + "\n" + "§a§lKnockback values:\n");
         for (String values : profile.getKnockbackValues()) {
@@ -429,6 +430,7 @@ public class KnockbackCommand extends Command {
         player.spigot().sendMessage(page, projectiles);
         player.sendMessage(separator);
     }
+
     private void knockbackCommandViewProjectiles(Player player, KnockbackProfile profile) {
         player.sendMessage(separator + "\n§a§lProjectiles values: \n");
         for (String values : profile.getProjectilesValues()) {

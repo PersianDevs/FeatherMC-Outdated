@@ -31,7 +31,10 @@ public class CraftComplexPart extends CraftEntity implements ComplexEntityPart {
     public EntityComplexPart getHandle() {
         return (EntityComplexPart) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftComplexPart";

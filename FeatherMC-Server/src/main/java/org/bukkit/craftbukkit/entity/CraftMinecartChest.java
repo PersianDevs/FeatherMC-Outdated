@@ -20,7 +20,10 @@ public class CraftMinecartChest extends CraftMinecart implements StorageMinecart
     public Inventory getInventory() {
         return inventory;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftMinecartChest{" + "inventory=" + inventory + '}';

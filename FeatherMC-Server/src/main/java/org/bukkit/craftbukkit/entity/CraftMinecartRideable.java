@@ -15,7 +15,10 @@ public class CraftMinecartRideable extends CraftMinecart implements RideableMine
     public String toString() {
         return "CraftMinecartRideable";
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public EntityType getType() {
         return EntityType.MINECART;
     }

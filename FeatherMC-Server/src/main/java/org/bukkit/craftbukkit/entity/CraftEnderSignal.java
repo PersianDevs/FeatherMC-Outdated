@@ -14,7 +14,10 @@ public class CraftEnderSignal extends CraftEntity implements EnderSignal {
     public EntityEnderSignal getHandle() {
         return (EntityEnderSignal) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftEnderSignal";

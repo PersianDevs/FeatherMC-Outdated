@@ -15,7 +15,10 @@ final class CraftMinecartMobSpawner extends CraftMinecart implements SpawnerMine
     public String toString() {
         return "CraftMinecartMobSpawner";
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public EntityType getType() {
         return EntityType.MINECART_MOB_SPAWNER;
     }

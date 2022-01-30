@@ -32,6 +32,12 @@ public class CraftConsoleCommandSender extends ServerCommandSender implements Co
         }
     }
 
+    // FeatherMC
+    @Override
+    public void sendMessageColor(String message) {
+        sendRawMessage(ChatColor.translateAlternateColorCodes('&', message));
+    }
+
     public String getName() {
         return "CONSOLE";
     }

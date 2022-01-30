@@ -4,6 +4,7 @@ package org.bukkit.craftbukkit.command;
 import java.util.Set;
 import net.minecraft.server.ICommandListener;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ProxiedCommandSender;
@@ -46,6 +47,12 @@ public class ProxiedNativeCommandSender implements ProxiedCommandSender {
     @Override
     public void sendMessage(String[] messages) {
         getCaller().sendMessage(messages);
+    }
+
+    // FeatherMC
+    @Override
+    public void sendMessageColor(String message) {
+        getCaller().sendMessage(ChatColor.translateAlternateColorCodes('&', message));
     }
 
     @Override

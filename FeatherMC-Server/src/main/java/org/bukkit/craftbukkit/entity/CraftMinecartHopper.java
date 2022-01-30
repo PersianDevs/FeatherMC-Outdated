@@ -15,7 +15,10 @@ final class CraftMinecartHopper extends CraftMinecart implements HopperMinecart 
         super(server, entity);
         inventory = new CraftInventory(entity);
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftMinecartHopper{" + "inventory=" + inventory + '}';

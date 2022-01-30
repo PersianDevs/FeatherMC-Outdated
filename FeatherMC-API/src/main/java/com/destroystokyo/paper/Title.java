@@ -2,12 +2,10 @@ package com.destroystokyo.paper;
 
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
-
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Represents a title to may be sent to a {@link Player}.
@@ -259,17 +257,30 @@ public final class Title { // todo: Farsi Kardane Title
         }
 
         /**
-         * Sets the title to the given text.
+         * Set Kardane Title
          * <p>
-         * <p>It is recommended to the {@link BaseComponent} methods.</p>
          *
-         * @param title the title text
-         * @return this builder instance
-         * @throws NullPointerException if the title is null
+         * @param title text e title
+         * @return Intance buildersh
+         * @throws NullPointerException Age Title null Bashe
          */
         public Builder title(String title) {
             return this.title(TextComponent.fromLegacyText(checkNotNull(title, "title")));
         }
+
+        // FeatherMC
+        /**
+         * Set Kardane Title Ba Color
+         * <p>
+         *
+         * @param title text e title
+         * @return Intance buildersh
+         * @throws NullPointerException Age Title null Bashe
+         */
+        public Builder titleColor(String title) {
+            return this.title(TextComponent.fromLegacyText(checkNotNull(ChatColor.translateAlternateColorCodes('&', title), "title")));
+        }
+
 
         /**
          * Sets the subtitle to the given text.
@@ -302,6 +313,19 @@ public final class Title { // todo: Farsi Kardane Title
          */
         public Builder subtitle(String subtitle) {
             return this.subtitle(subtitle == null ? null : TextComponent.fromLegacyText(subtitle));
+        }
+
+        // FeatherMC
+        /**
+         * Sets the subtitle to the given text.
+         * <p>
+         * <p>It is recommended to the {@link BaseComponent} methods.</p>
+         *
+         * @param subtitle the title text
+         * @return this builder instance
+         */
+        public Builder subtitleColor(String subtitle) {
+            return this.subtitle(subtitle == null ? null : TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&', subtitle)));
         }
 
         /**

@@ -33,9 +33,9 @@ public class SimpleCommandMap implements CommandMap {
 
         // FeatherMC start - Removed useless commands
 
-//        if(server.versionCommandEnabled()) register("bukkit", new VersionCommand("version"));
-//        if(server.reloadCommandEnabled()) register("bukkit", new ReloadCommand("reload"));
-//        if(server.pluginsCommandEnabled()) register("bukkit", new PluginsCommand("plugins"));
+        if(server.versionCommandEnabled()) register("bukkit", new VersionCommand("version"));
+        if(server.reloadCommandEnabled()) register("bukkit", new ReloadCommand("reload"));
+        if(server.pluginsCommandEnabled()) register("bukkit", new PluginsCommand("plugins"));
 
         // FeatherMC end
 

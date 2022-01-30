@@ -37,7 +37,10 @@ public class CraftFish extends AbstractProjectile implements Fish {
     public EntityFishingHook getHandle() {
         return (EntityFishingHook) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftFish";

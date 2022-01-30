@@ -4,9 +4,13 @@ import net.minecraft.server.ICommandListener;
 import net.minecraft.server.CommandBlockListenerAbstract;
 import net.minecraft.server.IChatBaseComponent;
 
+import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Represents input from a command block
@@ -32,6 +36,14 @@ public class CraftBlockCommandSender extends ServerCommandSender implements Bloc
     public void sendMessage(String[] messages) {
         for (String message : messages) {
             sendMessage(message);
+        }
+    }
+
+    // FeatherMC
+    @Override
+    public void sendMessageColor(String message) {
+        for (IChatBaseComponent component : CraftChatMessage.fromString(message)) {
+            commandBlock.sendMessage(component);
         }
     }
 

@@ -16,7 +16,10 @@ public class CraftItem extends CraftEntity implements Item {
         super(server, entity);
         this.item = item;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public CraftItem(CraftServer server, EntityItem entity) {
         this(server, entity, entity);
     }

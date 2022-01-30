@@ -23,4 +23,9 @@ public class CraftEnderCrystal extends CraftEntity implements EnderCrystal {
     public EntityType getType() {
         return EntityType.ENDER_CRYSTAL;
     }
+
+    @Override
+    public void sendMessageColor(String message) {
+
+    }
 }

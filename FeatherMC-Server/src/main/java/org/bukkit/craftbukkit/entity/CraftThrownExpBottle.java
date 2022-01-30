@@ -14,7 +14,10 @@ public class CraftThrownExpBottle extends CraftProjectile implements ThrownExpBo
     public EntityThrownExpBottle getHandle() {
         return (EntityThrownExpBottle) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "EntityThrownExpBottle";

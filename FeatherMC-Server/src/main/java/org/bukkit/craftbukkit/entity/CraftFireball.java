@@ -44,7 +44,10 @@ public class CraftFireball extends AbstractProjectile implements Fireball {
         }
         getHandle().projectileSource = shooter;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public Vector getDirection() {
         return new Vector(getHandle().dirX, getHandle().dirY, getHandle().dirZ);
     }

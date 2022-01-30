@@ -44,7 +44,10 @@ public class CraftArrow extends AbstractProjectile implements Arrow {
         }
         getHandle().projectileSource = shooter;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public EntityArrow getHandle() {
         return (EntityArrow) entity;

@@ -26,9 +26,9 @@ public class Nacho {
         AsyncExplosions.initExecutor(NachoConfig.useFixedPoolForTNT, NachoConfig.fixedPoolSize);
 
         if(NachoConfig.enableAntiCrash) {
-//            System.out.println("[NS-AntiCrash] Activating Anti Crash."); // FeatherMC - removed useless logs
+//            System.out.println("[FeatherMC] Dar Hale Fa'al Kardan Anti Crash"); // FeatherMC
             this.packetListeners.add(new AntiCrash());
-//            System.out.println("[NS-AntiCrash] Activated Anti Crash."); // FeatherMC - removed useless logs
+//            System.out.println("[FeatherMC] Activated Anti Crash."); // FeatherMC
         }
     }
 

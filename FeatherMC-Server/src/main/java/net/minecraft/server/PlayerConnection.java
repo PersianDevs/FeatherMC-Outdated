@@ -1227,7 +1227,7 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
                     Waitable waitable = new Waitable() {
                         @Override
                         protected Object evaluate() {
-                            PlayerConnection.this.disconnect("disconnect.spam");
+                            PlayerConnection.this.disconnect("§cDisconnect Shodid");
                             return null;
                         }
                     };
@@ -1242,7 +1242,7 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
                         throw new RuntimeException(e);
                     }
                 } else {
-                    this.disconnect("disconnect.spam");
+                    this.disconnect("§cDisconnect Shodid"); // FeatherMC
                 }
                 // CraftBukkit end
             }
@@ -1351,7 +1351,7 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
         SpigotTimings.playerCommandTimer.startTiming(); // Spigot
        // CraftBukkit start - whole method
         if ( org.spigotmc.SpigotConfig.logCommands ) // Spigot
-        this.c.info(this.player.getName() + " issued server command: " + s);
+        this.c.info(this.player.getName() + " In Commando Zad -> " + s);
 
         CraftPlayer player = this.getPlayer();
 

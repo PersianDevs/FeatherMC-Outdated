@@ -20,7 +20,10 @@ public class CraftBoat extends CraftVehicle implements Boat {
             getHandle().maxSpeed = speed;
         }
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public double getOccupiedDeceleration() {
         return getHandle().occupiedDeceleration;
     }

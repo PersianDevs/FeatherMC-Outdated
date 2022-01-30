@@ -55,7 +55,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
                         try {
                             Thread.sleep(2147483647L);
                         } catch (InterruptedException interruptedexception) {
-                            ;
+
                         }
                     }
                 }
@@ -211,6 +211,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
             }
         }
 
+            
             // Spigot Start - Move DedicatedPlayerList up and bring plugin loading from CraftServer to here
             // this.a((PlayerList) (new DedicatedPlayerList(this))); // CraftBukkit
             server.loadPlugins();

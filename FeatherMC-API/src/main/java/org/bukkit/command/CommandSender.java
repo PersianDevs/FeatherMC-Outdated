@@ -19,6 +19,13 @@ public interface CommandSender extends Permissible {
      */
     public void sendMessage(String[] messages);
 
+    // FeatherMC
+    /** Be Kasi Ke Commando Zade Ba Supporte Chat Color Payam Mifreste
+     *
+     * @param message Payami Ke Gharare Ersal She
+     */
+    public void sendMessageColor(String message);
+
     /**
      * Serveri Ro Return Mikone Ke Command Ro Toosh Zadi
      *

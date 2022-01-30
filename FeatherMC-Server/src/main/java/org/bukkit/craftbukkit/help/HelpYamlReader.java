@@ -35,13 +35,18 @@ public class HelpYamlReader {
             helpYaml.options().copyDefaults(true);
             helpYaml.setDefaults(defaultConfig);
 
-            try {
-                if (!helpYamlFile.exists()) {
-                    helpYaml.save(helpYamlFile);
-                }
-            } catch (IOException ex) {
-                server.getLogger().log(Level.SEVERE, "Could not save " + helpYamlFile, ex);
-            }
+            // FeatherMC Start
+
+//            try {
+//                if (!helpYamlFile.exists()) {
+//                    helpYaml.save(helpYamlFile);
+//                }
+//            } catch (IOException ex) {
+//                server.getLogger().log(Level.SEVERE, "Could not save " + helpYamlFile, ex);
+//            }
+
+            // FeatherMC End
+
         } catch (Exception ex) {
             server.getLogger().severe("Failed to load help.yml. Verify the yaml indentation is correct. Reverting to default help.yml.");
             helpYaml = defaultConfig;

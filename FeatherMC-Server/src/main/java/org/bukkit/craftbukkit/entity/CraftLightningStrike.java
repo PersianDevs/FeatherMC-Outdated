@@ -18,7 +18,10 @@ public class CraftLightningStrike extends CraftEntity implements LightningStrike
     public EntityLightning getHandle() {
         return (EntityLightning) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftLightningStrike";

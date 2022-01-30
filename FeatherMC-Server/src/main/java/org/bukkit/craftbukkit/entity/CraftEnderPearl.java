@@ -14,7 +14,10 @@ public class CraftEnderPearl extends CraftProjectile implements EnderPearl {
     public EntityEnderPearl getHandle() {
         return (EntityEnderPearl) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftEnderPearl";

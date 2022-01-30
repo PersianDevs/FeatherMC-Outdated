@@ -35,10 +35,10 @@ public class DeopCommand extends VanillaCommand {
         player.setOp(false);
 
         if (player instanceof Player) {
-            ((Player) player).sendMessage(ChatColor.YELLOW + "You are no longer op!");
+            ((Player) player).sendMessage(ChatColor.YELLOW + "Shoma Dige OP Nisty!");
         }
 
-        Command.broadcastCommandMessage(sender, "De-opped " + args[0]);
+        Command.broadcastCommandMessage(sender, args[0] + " Deop Shod");
         return true;
     }
 

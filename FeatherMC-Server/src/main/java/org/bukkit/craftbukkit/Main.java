@@ -203,7 +203,7 @@ public class Main {
                 }
 
                 if (useJline) {
-                    System.setProperty("library.jansi.version", "NachoSpigot");
+                    System.setProperty("library.jansi.version", "FeatherMC");
                     AnsiConsole.systemInstall();
                 } else {
                     // This ensures the terminal literal will always match the jline implementation

@@ -31,7 +31,10 @@ public class CraftThrownPotion extends CraftProjectile implements ThrownPotion {
 
         return CraftItemStack.asBukkitCopy(getHandle().item);
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public void setItem(ItemStack item) {
         // The ItemStack must not be null.
         Validate.notNull(item, "ItemStack cannot be null.");

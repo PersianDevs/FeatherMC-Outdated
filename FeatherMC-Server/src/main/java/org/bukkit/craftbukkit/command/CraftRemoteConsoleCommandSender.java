@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.command;
 
 import net.minecraft.server.ChatComponentText;
 import net.minecraft.server.RemoteControlCommandListener;
+import org.bukkit.ChatColor;
 import org.bukkit.command.RemoteConsoleCommandSender;
 
 public class CraftRemoteConsoleCommandSender extends ServerCommandSender implements RemoteConsoleCommandSender {
@@ -19,6 +20,12 @@ public class CraftRemoteConsoleCommandSender extends ServerCommandSender impleme
         for (String message : messages) {
             sendMessage(message);
         }
+    }
+
+    // FeatherMC
+    @Override
+    public void sendMessageColor(String message) {
+        RemoteControlCommandListener.getInstance().sendMessage(new ChatComponentText(ChatColor.translateAlternateColorCodes('&', message + "\n")));
     }
 
     @Override

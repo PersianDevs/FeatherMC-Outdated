@@ -189,8 +189,8 @@ public class SpigotConfig
     public static String whitelistMessage;
     public static String unknownCommandMessage;
     public static String serverFullMessage;
-    public static String outdatedClientMessage = "Outdated client! Please use {0}";
-    public static String outdatedServerMessage = "Outdated server! I\'m still on {0}";
+    public static String outdatedClientMessage = "§cClient Ghadimi! Lotfan Az Version {0} Estefade Konid";
+    public static String outdatedServerMessage = "§cServer Ghadimi! Versione Server {0} Ast!";
     private static String transform(String s)
     {
         return ChatColor.translateAlternateColorCodes( '&', s ).replaceAll( "\\n", "\n" );
@@ -203,9 +203,9 @@ public class SpigotConfig
             set( "messages.outdated-server", outdatedServerMessage );
         }
 
-        whitelistMessage = transform( getString( "messages.whitelist", "You are not whitelisted on this server!" ) );
-        unknownCommandMessage = transform( getString( "messages.unknown-command", "Unknown command. Type \"/help\" for help." ) );
-        serverFullMessage = transform( getString( "messages.server-full", "The server is full!" ) );
+        whitelistMessage = transform( getString( "messages.whitelist", "§cShoma Dar Server Whitelist Nistid!" ) );
+        unknownCommandMessage = transform( getString( "messages.unknown-command", "§7Commande Eshtebah. Az \"/help\" Komak Begirid." ) );
+        serverFullMessage = transform( getString( "messages.server-full", "§cServer Full Ast" ) );
         outdatedClientMessage = transform( getString( "messages.outdated-client", outdatedClientMessage ) );
         outdatedServerMessage = transform( getString( "messages.outdated-server", outdatedServerMessage ) );
     }
@@ -219,7 +219,7 @@ public class SpigotConfig
         timeoutTime = getInt( "settings.timeout-time", timeoutTime );
         restartOnCrash = getBoolean( "settings.restart-on-crash", restartOnCrash );
         restartScript = getString( "settings.restart-script", restartScript );
-        restartMessage = transform( getString( "messages.restart", "Server is restarting" ) );
+        restartMessage = transform( getString( "messages.restart", "§cServer Dar Hale Restart Ast!" ) );
         commands.put( "restart", new RestartCommand( "restart" ) );
         WatchdogThread.doStart( timeoutTime, restartOnCrash );
     }

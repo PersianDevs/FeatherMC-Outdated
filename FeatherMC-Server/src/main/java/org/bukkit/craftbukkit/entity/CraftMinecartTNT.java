@@ -15,7 +15,10 @@ final class CraftMinecartTNT extends CraftMinecart implements ExplosiveMinecart 
     public String toString() {
         return "CraftMinecartTNT";
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public EntityType getType() {
         return EntityType.MINECART_TNT;
     }

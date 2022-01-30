@@ -22,7 +22,10 @@ public class CraftExperienceOrb extends CraftEntity implements ExperienceOrb {
     public EntityExperienceOrb getHandle() {
         return (EntityExperienceOrb) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftExperienceOrb";

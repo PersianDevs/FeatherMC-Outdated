@@ -50,6 +50,11 @@ public class CraftMinecartCommand extends CraftMinecart implements CommandMineca
     public void sendMessage(String[] messages) {
     }
 
+    // FeatherMC
+    @Override
+    public void sendMessageColor(String message) {
+    }
+
     @Override
     public String getName() {
         return ((EntityMinecartCommandBlock) getHandle()).getCommandBlock().getName();

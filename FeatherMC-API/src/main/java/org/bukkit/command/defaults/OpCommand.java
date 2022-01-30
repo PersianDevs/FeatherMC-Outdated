@@ -35,7 +35,7 @@ public class OpCommand extends VanillaCommand {
         OfflinePlayer player = Bukkit.getOfflinePlayer(args[0]);
         player.setOp(true);
 
-        Command.broadcastCommandMessage(sender, "Opped " + args[0]);
+        Command.broadcastCommandMessage(sender, args[0] + " Op Shod");
         return true;
     }
 

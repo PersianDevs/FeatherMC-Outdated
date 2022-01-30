@@ -36,7 +36,10 @@ public class CraftFirework extends CraftEntity implements Firework {
             this.item.setType(Material.FIREWORK);
         }
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public EntityFireworks getHandle() {
         return (EntityFireworks) entity;

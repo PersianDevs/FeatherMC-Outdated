@@ -32,13 +32,13 @@ public class PropertyManager {
                     try {
                         fileinputstream.close();
                     } catch (IOException ioexception) {
-                        ;
+
                     }
                 }
 
             }
         } else {
-            PropertyManager.a.warn(file + " does not exist");
+//            PropertyManager.a.warn(file + " does not exist"); // FeatherMC - Removed useless log
             this.a();
         }
 

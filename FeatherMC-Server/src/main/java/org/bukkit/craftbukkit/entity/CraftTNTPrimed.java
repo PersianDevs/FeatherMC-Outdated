@@ -42,7 +42,10 @@ public class CraftTNTPrimed extends CraftEntity implements TNTPrimed {
     public EntityTNTPrimed getHandle() {
         return (EntityTNTPrimed) entity;
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     @Override
     public String toString() {
         return "CraftTNTPrimed";

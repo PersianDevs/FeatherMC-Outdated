@@ -161,6 +161,14 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         }
     }
 
+    // FeatherMC
+    @Override
+    public void sendMessageColor(String message) {
+        if (!conversationTracker.isConversingModaly()) {
+            this.sendRawMessage(ChatColor.translateAlternateColorCodes('&', message));
+        }
+    }
+
     // Paper start
     @Override
     public void sendMessage(BaseComponent component) {
@@ -308,6 +316,15 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         if (getHandle().playerConnection == null) return;
 
         getHandle().playerConnection.disconnect(message == null ? "" : message);
+    }
+
+    // FeatherMC
+    @Override
+    public void kickPlayerColor(String message) {
+        org.spigotmc.AsyncCatcher.catchOp( "player kick"); // Spigot
+        if (getHandle().playerConnection == null) return;
+
+        getHandle().playerConnection.disconnect(message == null ? "" : ChatColor.translateAlternateColorCodes('&', message));
     }
 
     @Override

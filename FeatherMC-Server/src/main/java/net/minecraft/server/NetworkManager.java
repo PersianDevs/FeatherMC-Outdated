@@ -426,11 +426,11 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
                 if (this.j() != null) {
                     this.getPacketListener().a(this.j());
                 } else if (this.getPacketListener() != null) {
-                    this.getPacketListener().a(new ChatComponentText("Disconnected"));
+                    this.getPacketListener().a(new ChatComponentText("§cDisconnect Shodid"));
                 }
                 this.i.clear(); // Free up packet queue.
-            } else {
-                NetworkManager.LOGGER.warn("handleDisconnection() called twice");
+//            } else {
+//                NetworkManager.LOGGER.warn("handleDisconnection() called twice"); // FeatherMC - Removed useless log
             }
 
         }

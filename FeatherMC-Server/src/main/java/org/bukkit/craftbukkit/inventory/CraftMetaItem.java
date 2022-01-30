@@ -19,6 +19,7 @@ import net.minecraft.server.NBTTagList;
 import net.minecraft.server.NBTTagString;
 
 import org.apache.commons.lang.Validate;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
@@ -644,6 +645,10 @@ class CraftMetaItem implements ItemMeta, Repairable {
 
     public final void setDisplayName(String name) {
         this.displayName = name;
+    }
+
+    public final void setDisplayNameColor(String name) {
+        this.displayName = ChatColor.translateAlternateColorCodes('&', name);
     }
 
     public boolean hasDisplayName() {

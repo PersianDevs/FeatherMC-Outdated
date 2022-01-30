@@ -20,10 +20,10 @@ public class ReloadCommand extends BukkitCommand {
     public boolean execute(CommandSender sender, String currentAlias, String[] args) {
         if (!testPermission(sender)) return true;
 
-        Command.broadcastCommandMessage(sender, ChatColor.RED + "Please note that this command is not supported and may cause issues when using some plugins.");
-        Command.broadcastCommandMessage(sender, ChatColor.RED + "If you encounter any issues please use the /stop command to restart your server.");
+        Command.broadcastCommandMessage(sender, ChatColor.RED + "Tavajoh Konid In Dastoor Momkene Moshkeli Baraye Plugin Ha Ijad Kone Pas,");
+        Command.broadcastCommandMessage(sender, ChatColor.RED + "Age Be Moshkely Barkhord Kardi Ba Dastoore /Stop Server Ro Restart Kon.");
         Bukkit.reload();
-        Command.broadcastCommandMessage(sender, ChatColor.GREEN + "Reload complete.");
+        Command.broadcastCommandMessage(sender, ChatColor.GREEN + "Reload Anjam Shod.");
 
         return true;
     }

@@ -77,4 +77,9 @@ public class CraftHanging extends CraftEntity implements Hanging {
     public EntityType getType() {
         return EntityType.UNKNOWN;
     }
+
+    @Override
+    public void sendMessageColor(String message) {
+
+    }
 }

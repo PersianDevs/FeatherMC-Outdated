@@ -220,12 +220,12 @@ public class NachoConfig {
     public static boolean enableHelpCommand;
 
     private static void commands() {
-        enableVersionCommand = getBoolean("settings.commands.enable-version-command", true);
+        enableVersionCommand = getBoolean("settings.commands.enable-version-command", false);
         enableVersionPermission = getBoolean("settings.commands.permission.version", true);
-        enablePluginsCommand = getBoolean("settings.commands.enable-plugins-command", true);
+        enablePluginsCommand = getBoolean("settings.commands.enable-plugins-command", false);
         enablePluginsPermission = getBoolean("settings.commands.permission.plugins", true);
         enableReloadCommand = getBoolean("settings.commands.enable-reload-command", true);
-        enableHelpCommand = getBoolean("settings.commands.enable-help-command", true);
+        enableHelpCommand = getBoolean("settings.commands.enable-help-command", false);
     }
 
     public static boolean useFastOperators;

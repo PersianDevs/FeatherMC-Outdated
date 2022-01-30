@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class SetMaxSlotCommand extends Command {
 
@@ -13,8 +14,8 @@ public class SetMaxSlotCommand extends Command {
         super(name);
         this.description = "Set Kardan Max Slote Server";
         this.usageMessage = "/sms [amount]";
-        this.setAliases(Arrays.asList("smp", "setslots"));
-        setPermission("ns.command.sms");
+        this.setAliases(Collections.singletonList("setslots"));
+        setPermission("feathermc.command.setslots");
     }
 
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {

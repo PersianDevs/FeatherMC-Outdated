@@ -19,7 +19,10 @@ public class CraftEgg extends CraftProjectile implements Egg {
     public String toString() {
         return "CraftEgg";
     }
+    @Override
+    public void sendMessageColor(String message) {
 
+    }
     public EntityType getType() {
         return EntityType.EGG;
     }
