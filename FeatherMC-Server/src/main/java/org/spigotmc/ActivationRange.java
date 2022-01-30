@@ -34,8 +34,7 @@ import net.minecraft.server.World;
 import co.aikar.timings.SpigotTimings;
 
 
-public class ActivationRange
-{
+public class ActivationRange {
 
     static AxisAlignedBB maxBB = AxisAlignedBB.a( 0, 0, 0, 0, 0, 0 );
     static AxisAlignedBB miscBB = AxisAlignedBB.a( 0, 0, 0, 0, 0, 0 );
