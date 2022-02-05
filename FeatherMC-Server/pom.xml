@@ -205,7 +205,7 @@
                     <forceCreation>true</forceCreation> <!-- Required to prevent shading the jar multiple times -->
                     <archive>
                         <manifestEntries>
-                            <Main-Class>org.bukkit.craftbukkit.Main</Main-Class>
+                            <Main-Class>ir.pmzhero.feathermc.Main</Main-Class>
                             <Implementation-Title>CraftBukkit</Implementation-Title>
                             <Implementation-Version>1.8.8</Implementation-Version>
                             <Implementation-Vendor>${maven.build.timestamp}</Implementation-Vendor>
