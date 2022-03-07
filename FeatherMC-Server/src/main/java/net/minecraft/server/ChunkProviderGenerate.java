@@ -75,7 +75,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
     }
 
     public void a(int i, int j, ChunkSnapshot chunksnapshot) {
-        this.B = this.m.getWorldChunkManager().getBiomes(this.B, i * 4 - 2, j * 4 - 2, 10, 10);
+//        this.B = this.m.getWorldChunkManager().getBiomes(this.B, i * 4 - 2, j * 4 - 2, 10, 10);
         this.a(i * 4, 0, j * 4);
 
         for (int k = 0; k < 4; ++k) {
@@ -150,12 +150,12 @@ public class ChunkProviderGenerate implements IChunkProvider {
     }
 
     public Chunk getOrCreateChunk(int i, int j) {
-        this.h.setSeed((long) i * 341873128712L + (long) j * 132897987541L);
+        this.h.setSeed(0);
         ChunkSnapshot chunksnapshot = new ChunkSnapshot();
 
-        this.a(i, j, chunksnapshot);
-        this.B = this.m.getWorldChunkManager().getBiomeBlock(this.B, i * 16, j * 16, 16, 16);
-        this.a(i, j, chunksnapshot, this.B);
+//        this.a(i, j, chunksnapshot);
+//        this.B = this.m.getWorldChunkManager().getBiomeBlock(this.B, i * 16, j * 16, 16, 16);
+//        this.a(i, j, chunksnapshot, this.B);
         if (this.r.r && this.m.paperSpigotConfig.generateCaves) { // PaperSpigot
             this.u.a(this, this.m, i, j, chunksnapshot);
         }
@@ -185,11 +185,11 @@ public class ChunkProviderGenerate implements IChunkProvider {
         }
 
         Chunk chunk = new Chunk(this.m, chunksnapshot, i, j);
-        byte[] abyte = chunk.getBiomeIndex();
-
-        for (int k = 0; k < abyte.length; ++k) {
-            abyte[k] = (byte) this.B[k].id;
-        }
+//        byte[] abyte = chunk.getBiomeIndex();
+//
+//        for (int k = 0; k < abyte.length; ++k) {
+//            abyte[k] = (byte) this.B[k].id;
+//        }
 
         chunk.initLighting();
         return chunk;
@@ -214,30 +214,30 @@ public class ChunkProviderGenerate implements IChunkProvider {
                 float f3 = 0.0F;
                 float f4 = 0.0F;
                 byte b0 = 2;
-                BiomeBase biomebase = this.B[j1 + 2 + (k1 + 2) * 10];
+//                BiomeBase biomebase = this.B[j1 + 2 + (k1 + 2) * 10];
 
-                for (int l1 = -b0; l1 <= b0; ++l1) {
-                    for (int i2 = -b0; i2 <= b0; ++i2) {
-                        BiomeBase biomebase1 = this.B[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
-                        float f5 = this.r.n + biomebase1.an * this.r.m;
-                        float f6 = this.r.p + biomebase1.ao * this.r.o;
-
-                        if (this.o == WorldType.AMPLIFIED && f5 > 0.0F) {
-                            f5 = 1.0F + f5 * 2.0F;
-                            f6 = 1.0F + f6 * 4.0F;
-                        }
-
-                        float f7 = this.q[l1 + 2 + (i2 + 2) * 5] / (f5 + 2.0F);
-
-                        if (biomebase1.an > biomebase.an) {
-                            f7 /= 2.0F;
-                        }
-
-                        f2 += f6 * f7;
-                        f3 += f5 * f7;
-                        f4 += f7;
-                    }
-                }
+//                for (int l1 = -b0; l1 <= b0; ++l1) {
+//                    for (int i2 = -b0; i2 <= b0; ++i2) {
+//                        BiomeBase biomebase1 = this.B[j1 + l1 + 2 + (k1 + i2 + 2) * 10];
+//                        float f5 = this.r.n + biomebase1.an * this.r.m;
+//                        float f6 = this.r.p + biomebase1.ao * this.r.o;
+//
+//                        if (this.o == WorldType.AMPLIFIED && f5 > 0.0F) {
+//                            f5 = 1.0F + f5 * 2.0F;
+//                            f6 = 1.0F + f6 * 4.0F;
+//                        }
+//
+//                        float f7 = this.q[l1 + 2 + (i2 + 2) * 5] / (f5 + 2.0F);
+//
+//                        if (biomebase1.an > biomebase.an) {
+//                            f7 /= 2.0F;
+//                        }
+//
+//                        f2 += f6 * f7;
+//                        f3 += f5 * f7;
+//                        f4 += f7;
+//                    }
+//                }
 
                 f2 /= f4;
                 f3 /= f4;
