@@ -66,7 +66,6 @@ public class ActivationRange {
      * These entities are excluded from Activation range checks.
      *
      * @param entity
-     * @param world
      * @return boolean If it should always tick.
      */
     public static boolean initializeEntityActivationState(Entity entity, SpigotWorldConfig config)
