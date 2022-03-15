@@ -22,7 +22,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.server.ServerListPingEvent;
-import org.bukkit.help.HelpMap;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -748,14 +747,6 @@ public interface Server extends PluginMessageRecipient {
         return false;
     }
 
-    /**
-     * Checks if /help is enabled
-     * @return whether /help is enabled
-     */
-    default boolean helpCommandEnabled() {
-        return true;
-    }
-
     // Nacho end
     /**
      * Gets the folder that contains all of the various {@link World}s.
@@ -777,13 +768,6 @@ public interface Server extends PluginMessageRecipient {
      * @return messenger responsible for this server
      */
     public Messenger getMessenger();
-
-    /**
-     * Gets the {@link HelpMap} providing help topics for this server.
-     *
-     * @return a help map for this server
-     */
-    public HelpMap getHelpMap();
 
     /**
      * Creates an empty inventory of the specified type. If the type is {@link

@@ -56,7 +56,6 @@ import org.bukkit.conversations.Conversable;
 import org.bukkit.craftbukkit.command.VanillaCommandWrapper;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.craftbukkit.generator.CraftChunkData;
-import org.bukkit.craftbukkit.help.SimpleHelpMap;
 import org.bukkit.craftbukkit.map.CraftMapView;
 import org.bukkit.craftbukkit.metadata.EntityMetadataStore;
 import org.bukkit.craftbukkit.metadata.PlayerMetadataStore;
@@ -77,7 +76,6 @@ import org.bukkit.event.world.WorldInitEvent;
 import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.event.world.WorldUnloadEvent;
 import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.help.HelpMap;
 import org.bukkit.inventory.FurnaceRecipe;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Inventory;
@@ -132,7 +130,6 @@ public final class CraftServer implements Server {
     private final ServicesManager servicesManager = new SimpleServicesManager();
     private final CraftScheduler scheduler = new CraftScheduler();
     private final SimpleCommandMap commandMap = new SimpleCommandMap(this);
-    private final SimpleHelpMap helpMap = new SimpleHelpMap(this);
     private final StandardMessenger messenger = new StandardMessenger();
     private final PluginManager pluginManager = new SimplePluginManager(this, commandMap);
     protected final MinecraftServer console;
@@ -339,10 +336,6 @@ public final class CraftServer implements Server {
     }
 
     public void enablePlugins(PluginLoadOrder type) {
-        if (type == PluginLoadOrder.STARTUP) {
-            helpMap.clear();
-            helpMap.initializeGeneralTopics();
-        }
 
         Plugin[] plugins = pluginManager.getPlugins();
 
@@ -354,37 +347,17 @@ public final class CraftServer implements Server {
 
         if (type == PluginLoadOrder.POSTWORLD) {
             // Spigot start - Allow vanilla commands to be forced to be the main command
-            setVanillaCommands(true);
             commandMap.setFallbackCommands();
-            setVanillaCommands(false);
             // Spigot end
             commandMap.registerServerAliases();
-            loadCustomPermissions();
             DefaultPermissions.registerCorePermissions();
             CraftDefaultPermissions.registerCorePermissions();
-            helpMap.initializeCommands();
             co.aikar.timings.Timings.reset(); // Spigot
         }
     }
 
     public void disablePlugins() {
         pluginManager.disablePlugins();
-    }
-
-    private void setVanillaCommands(boolean first) { // Spigot
-        Map<String, ICommand> commands = new CommandDispatcher().getCommands();
-        for (ICommand cmd : commands.values()) {
-            // Spigot start
-            VanillaCommandWrapper wrapper = new VanillaCommandWrapper((CommandAbstract) cmd, LocaleI18n.get(cmd.getUsage(null)));
-            if (org.spigotmc.SpigotConfig.replaceCommands.contains( wrapper.getName() ) ) {
-                if (first) {
-                    commandMap.register("minecraft", wrapper);
-                }
-            } else if (!first) {
-                commandMap.register("minecraft", wrapper);
-            }
-            // Spigot end
-        }
     }
 
     private void loadPlugin(Plugin plugin) {
@@ -823,53 +796,6 @@ public final class CraftServer implements Server {
             }
         } catch (Exception ex) {
             getLogger().log(Level.WARNING, "Couldn't load server icon", ex);
-        }
-    }
-
-    @SuppressWarnings({ "unchecked", "finally" })
-    private void loadCustomPermissions() {
-        File file = new File(configuration.getString("settings.permissions-file"));
-        FileInputStream stream;
-
-        try {
-            stream = new FileInputStream(file);
-        } catch (FileNotFoundException ex) {
-            try {
-                file.createNewFile();
-            } finally {
-                return;
-            }
-        }
-
-        Map<String, Map<String, Object>> perms;
-
-        try {
-            perms = (Map<String, Map<String, Object>>) yaml.load(stream);
-        } catch (MarkedYAMLException ex) {
-            getLogger().log(Level.WARNING, "Server permissions file " + file + " is not valid YAML: " + ex.toString());
-            return;
-        } catch (Throwable ex) {
-            getLogger().log(Level.WARNING, "Server permissions file " + file + " is not valid YAML.", ex);
-            return;
-        } finally {
-            try {
-                stream.close();
-            } catch (IOException ex) {}
-        }
-
-        if (perms == null) {
-//            getLogger().log(Level.INFO, "Server permissions file " + file + " is empty, ignoring it"); // FeatherMC
-            return;
-        }
-
-        List<Permission> permsList = Permission.loadPermissions(perms, "Permission node '%s' in " + file + " is invalid", Permission.DEFAULT_PERMISSION);
-
-        for (Permission perm : permsList) {
-            try {
-                pluginManager.addPermission(perm);
-            } catch (IllegalArgumentException ex) {
-                getLogger().log(Level.SEVERE, "Permission in " + file + " was already defined", ex);
-            }
         }
     }
 
@@ -1570,10 +1496,6 @@ public final class CraftServer implements Server {
         return NachoConfig.enablePluginsPermission;
     }
 
-    @Override
-    public boolean helpCommandEnabled() {return NachoConfig.enableHelpCommand;}
-    // Nacho end
-
     public EntityMetadataStore getEntityMetadata() {
         return entityMetadata;
     }
@@ -1664,11 +1586,6 @@ public final class CraftServer implements Server {
     public Inventory createInventory(InventoryHolder owner, int size, String title) throws IllegalArgumentException {
         Validate.isTrue(size % 9 == 0, "Chests must have a size that is a multiple of 9!");
         return new CraftInventoryCustom(owner, size, title);
-    }
-
-    @Override
-    public HelpMap getHelpMap() {
-        return helpMap;
     }
 
     @Override // Paper - add override

@@ -3,7 +3,6 @@ package org.bukkit.enchantments;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.bukkit.command.defaults.EnchantCommand;
 import org.bukkit.inventory.ItemStack;
 
 /**
